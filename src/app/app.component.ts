@@ -13,14 +13,6 @@ export class AppComponent implements OnInit {
       console.log(event);
     });
 
-    let counter = 1000;
-    setInterval(() => {
-      console.log(counter);
-      counter++;
-    },10000);
-
-    setTimeout(() => {
-      console.log("finish");
-    }, 1000);
+   
   }
 }
