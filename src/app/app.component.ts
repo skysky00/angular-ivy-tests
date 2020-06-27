@@ -1,5 +1,5 @@
 import { Component, VERSION, OnInit } from '@angular/core';
-import { interval, timer } from 'rxjs';
+import { interval, timer, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -28,6 +28,9 @@ export class AppComponent implements OnInit {
 
     let time = timer(3000,1000);
     time.subscribe(val => {console.log(counter+1);});
+
+    let evt = fromEvent(document, 'click');
+    evt.subscribe(ev => {console.log(ev);});
 
   }
 }
