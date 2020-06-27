@@ -1,4 +1,5 @@
 import { Component, VERSION, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -21,5 +22,9 @@ export class AppComponent implements OnInit {
     setTimeout(() => {
       console.log("finish");
     }, 5000);
+
+    let obs = interval(1000);
+    obs.subscribe(val => {console.log(counter+1);});
+
   }
 }
