@@ -1,5 +1,5 @@
 import { Component, VERSION, OnInit } from '@angular/core';
-import { interval } from 'rxjs';
+import { interval, timer } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -25,6 +25,9 @@ export class AppComponent implements OnInit {
 
     let obs = interval(1000);
     obs.subscribe(val => {console.log(counter+1);});
+
+    let time = timer(3000,1000);
+    time.subscribe(val => {console.log(counter+1);});
 
   }
 }
