@@ -11,26 +11,26 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     document.addEventListener('click', event => {
-      console.log(event);
+      console.log("From document.addEventListener "+ event);
     });
 
     let counter = 1000;
     setInterval(() => {
-      console.log(counter++);
+      console.log("From setInterval " + counter++);
     },1000);
 
     setTimeout(() => {
-      console.log("finish");
+      console.log("from setTimeout finish");
     }, 5000);
 
     let obs = interval(1000);
-    obs.subscribe(val => {console.log(counter+1);});
+    obs.subscribe(val => {console.log("From interval " + counter+1);});
 
     let time = timer(3000,1000);
-    time.subscribe(val => {console.log(counter+1);});
+    time.subscribe(val => {console.log("From timer " + counter+1);});
 
     let evt = fromEvent(document, 'click');
-    evt.subscribe(ev => {console.log(ev);});
+    evt.subscribe(ev => {console.log("From fromEvent " + ev);});
 
   }
 }
